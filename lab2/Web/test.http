@@ -1,0 +1,73 @@
+
+@host = http://localhost:5156
+
+### 测试1：输入：100，60，5
+# 预期：HTTP 200
+# 展示面积 4500.00，边框面积 1500.00，外周长 320.00
+POST {{host}}/api/frame/calculate
+Content-Type: application/x-www-form-urlencoded
+
+width=100&height=60&border=5
+
+
+### 测试2：输入：12.5，8，0.5
+# 预期：HTTP 200
+# 展示面积 80.50，边框面积 19.50，外周长 41.00
+POST {{host}}/api/frame/calculate
+Content-Type: application/x-www-form-urlencoded
+
+width=12.5&height=8&border=0.5
+
+
+### 测试3：输入：10，8，4
+# 预期：HTTP 400
+# 原因：2 * border = height
+POST {{host}}/api/frame/calculate
+Content-Type: application/x-www-form-urlencoded
+
+width=10&height=8&border=4
+
+
+### 测试4：输入：10，8，-1
+# 预期：HTTP 400
+# 原因：border <= 0
+POST {{host}}/api/frame/calculate
+Content-Type: application/x-www-form-urlencoded
+
+width=10&height=8&border=-1
+
+
+### 测试5：缺少width
+# 预期：HTTP 400
+POST {{host}}/api/frame/calculate
+Content-Type: application/x-www-form-urlencoded
+
+height=8&border=1
+
+
+### 测试6：width非数字
+# 预期：HTTP 400
+POST {{host}}/api/frame/calculate
+Content-Type: application/x-www-form-urlencoded
+
+width=abc&height=8&border=1
+
+
+### 测试7：额外测试，输入21，16，0.5
+# 预期：HTTP 200
+#  展示面积 300.00，边框面积 36.00，外周长 74.00
+POST {{host}}/api/frame/calculate
+Content-Type: application/x-www-form-urlencoded
+
+width=21&height=16&border=0.5
+
+### JSON 格式请求测试
+# 预期：HTTP 200
+POST {{host}}/api/frame/calculate
+Content-Type: application/json
+
+{
+  "width": 21,
+  "height": 16,
+  "border": 0.5
+}

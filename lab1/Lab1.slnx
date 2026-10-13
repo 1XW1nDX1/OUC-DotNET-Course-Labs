@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ExpoApi/ExpoApi.csproj" Id="29c224d8-47f8-4e4b-af47-60aebdcff2f4" />
+  <Project Path="ExpoConsole/ExpoConsole.csproj" />
+  <Project Path="ExpoDesktop/ExpoDesktop.csproj" />
+  <Project Path="ExpoWPF/ExpoWPF.csproj" Id="8fe7c8c2-01a2-4e6d-9e28-981e943211c3" />
+</Solution>

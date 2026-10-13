@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Console/Console1.csproj" Id="d392c8bc-847d-4631-a4fe-931a0bae10d6" />
+  <Project Path="Desktop/Desktop.csproj" />
+  <Project Path="Web/Web.csproj" Id="d589f4c3-2481-4e14-812e-f338842149d9" />
+</Solution>

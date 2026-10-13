@@ -1,0 +1,6 @@
+@ExpoApi_HostAddress = http://localhost:7777
+
+GET {{ExpoApi_HostAddress}}/lab1/status
+Accept: application/json
+
+###

@@ -1,0 +1,47 @@
+
+# Visual Studio 缓存
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 编译输出
+[Bb]in/
+[Oo]bj/
+
+# 测试结果
+TestResults/
+*.trx
+coverage/
+coverage.cobertura.xml
+
+# NuGet
+*.nupkg
+packages/
+!packages/build/
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时文件及日志
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+
+# 发布输出（按需启用）
+publish/
+
+# 用于提交的压缩文件
+*.zip
