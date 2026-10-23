@@ -71,6 +71,14 @@ namespace Temperature_Calibration_Value_Searcher
 
             Range1.Text = $"[{lowest},{highest}]";
             targetTemperature = rand.Next(lowest, highest);
+
+            if(checkBox1.Checked)
+            {
+                targetTemperature = 53;
+            }
+
+            if(listBox1.Items.Count > 0)
+                listBox1.Items.Clear();
         }
 
         private void Commit(object sender, EventArgs e)
