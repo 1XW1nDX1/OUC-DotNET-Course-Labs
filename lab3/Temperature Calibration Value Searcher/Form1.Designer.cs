@@ -44,47 +44,42 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(8, 45);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(13, 64);
             label1.Name = "label1";
-            label1.Size = new Size(92, 17);
+            label1.Size = new Size(136, 24);
             label1.TabIndex = 0;
             label1.Text = "当前温度范围：";
             // 
             // Range1
             // 
             Range1.AutoSize = true;
-            Range1.Location = new Point(98, 45);
-            Range1.Margin = new Padding(2, 0, 2, 0);
+            Range1.Location = new Point(154, 64);
             Range1.Name = "Range1";
-            Range1.Size = new Size(47, 17);
+            Range1.Size = new Size(70, 24);
             Range1.TabIndex = 1;
             Range1.Text = "[20,80]";
             // 
             // Input1
             // 
-            Input1.Location = new Point(8, 96);
-            Input1.Margin = new Padding(2);
+            Input1.Location = new Point(13, 136);
             Input1.Name = "Input1";
-            Input1.Size = new Size(162, 23);
+            Input1.Size = new Size(252, 30);
             Input1.TabIndex = 2;
             // 
             // record1
             // 
             record1.AutoSize = true;
-            record1.Location = new Point(8, 71);
-            record1.Margin = new Padding(2, 0, 2, 0);
+            record1.Location = new Point(13, 100);
             record1.Name = "record1";
-            record1.Size = new Size(80, 17);
+            record1.Size = new Size(118, 24);
             record1.TabIndex = 3;
             record1.Text = "输入候选值：";
             // 
             // button1
             // 
-            button1.Location = new Point(222, 95);
-            button1.Margin = new Padding(2);
+            button1.Location = new Point(349, 134);
             button1.Name = "button1";
-            button1.Size = new Size(104, 23);
+            button1.Size = new Size(163, 32);
             button1.TabIndex = 4;
             button1.Text = "提交";
             button1.UseVisualStyleBackColor = true;
@@ -93,10 +88,9 @@
             // button2
             // 
             button2.BackColor = SystemColors.GradientInactiveCaption;
-            button2.Location = new Point(8, 151);
-            button2.Margin = new Padding(2);
+            button2.Location = new Point(13, 213);
             button2.Name = "button2";
-            button2.Size = new Size(318, 77);
+            button2.Size = new Size(500, 109);
             button2.TabIndex = 5;
             button2.Text = "开始新一轮";
             button2.UseVisualStyleBackColor = false;
@@ -105,10 +99,9 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(8, 11);
-            checkBox1.Margin = new Padding(2);
+            checkBox1.Location = new Point(13, 16);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(75, 21);
+            checkBox1.Size = new Size(108, 28);
             checkBox1.TabIndex = 6;
             checkBox1.Text = "测试开关";
             checkBox1.UseVisualStyleBackColor = true;
@@ -117,19 +110,19 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(15, 243);
-            listBox1.Margin = new Padding(2);
+            listBox1.Location = new Point(13, 343);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(308, 89);
+            listBox1.Size = new Size(493, 124);
             listBox1.TabIndex = 10;
             // 
             // Easy
             // 
             Easy.AutoSize = true;
             Easy.Checked = true;
-            Easy.Location = new Point(224, 12);
+            Easy.Location = new Point(352, 17);
+            Easy.Margin = new Padding(5, 4, 5, 4);
             Easy.Name = "Easy";
-            Easy.Size = new Size(93, 21);
+            Easy.Size = new Size(136, 28);
             Easy.TabIndex = 11;
             Easy.TabStop = true;
             Easy.Text = "简单 [20,80]";
@@ -139,9 +132,10 @@
             // Medium
             // 
             Medium.AutoSize = true;
-            Medium.Location = new Point(224, 39);
+            Medium.Location = new Point(352, 55);
+            Medium.Margin = new Padding(5, 4, 5, 4);
             Medium.Name = "Medium";
-            Medium.Size = new Size(93, 21);
+            Medium.Size = new Size(136, 28);
             Medium.TabIndex = 12;
             Medium.Text = "一般 [0,100]";
             Medium.UseVisualStyleBackColor = true;
@@ -150,9 +144,10 @@
             // Hard
             // 
             Hard.AutoSize = true;
-            Hard.Location = new Point(224, 66);
+            Hard.Location = new Point(352, 93);
+            Hard.Margin = new Padding(5, 4, 5, 4);
             Hard.Name = "Hard";
-            Hard.Size = new Size(96, 21);
+            Hard.Size = new Size(142, 28);
             Hard.TabIndex = 13;
             Hard.Text = "困难[0,1000]";
             Hard.UseVisualStyleBackColor = true;
@@ -160,9 +155,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(335, 346);
+            ClientSize = new Size(526, 488);
             Controls.Add(Hard);
             Controls.Add(Medium);
             Controls.Add(Easy);
@@ -174,7 +169,6 @@
             Controls.Add(Input1);
             Controls.Add(Range1);
             Controls.Add(label1);
-            Margin = new Padding(2);
             Name = "Form1";
             Text = "温度校准值搜寻器";
             Load += Form1_Load;
