@@ -80,7 +80,10 @@ namespace Temperature_Calibration_Value_Searcher
                 targetTemperature = rand.Next(lowest, highest);
             }
 
-            if(listBox1.Items.Count > 0)
+            low = lowest;
+            high= highest;
+
+            if (listBox1.Items.Count > 0)
                 listBox1.Items.Clear();
         }
 
