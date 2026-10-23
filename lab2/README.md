@@ -1,4 +1,3 @@
-
 # Lab2 展板边框计算与表达式求值
 
 - 开发工具：Visual Studio Community 2026
