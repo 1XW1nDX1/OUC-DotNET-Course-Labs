@@ -69,13 +69,14 @@ namespace Temperature_Calibration_Value_Searcher
                 highest = 1000;
             }
 
+            Range1.Text = $"[{lowest},{highest}]";
+
             if (checkBox1.Checked)
             {
                 targetTemperature = 53;
             }
             else
             {
-                Range1.Text = $"[{lowest},{highest}]";
                 targetTemperature = rand.Next(lowest, highest);
             }
 
