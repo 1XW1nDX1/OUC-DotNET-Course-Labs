@@ -81,6 +81,7 @@ namespace Temperature_Calibration_Value_Searcher
             if (isOK)
             {
                 MessageBox.Show("本轮已完成，请点击“开始新一轮”按钮", "提示");
+                return;
             }
 
             if (String.IsNullOrWhiteSpace(input)
