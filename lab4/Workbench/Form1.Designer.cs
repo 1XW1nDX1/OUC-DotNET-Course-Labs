@@ -39,6 +39,7 @@
             label2 = new Label();
             listBox1 = new ListBox();
             label3 = new Label();
+            history1 = new Button();
             SuspendLayout();
             // 
             // status1
@@ -46,9 +47,10 @@
             status1.AutoCheck = false;
             status1.AutoSize = true;
             status1.CheckAlign = ContentAlignment.MiddleRight;
-            status1.Location = new Point(12, 12);
+            status1.Location = new Point(8, 8);
+            status1.Margin = new Padding(2);
             status1.Name = "status1";
-            status1.Size = new Size(90, 28);
+            status1.Size = new Size(63, 21);
             status1.TabIndex = 0;
             status1.Text = "可计算";
             status1.UseVisualStyleBackColor = true;
@@ -56,21 +58,23 @@
             // textBox1
             // 
             textBox1.Font = new Font("Microsoft YaHei UI", 24F);
-            textBox1.Location = new Point(469, 116);
+            textBox1.Location = new Point(242, 96);
+            textBox1.Margin = new Padding(2);
             textBox1.MaximumSize = new Size(100, 70);
-            textBox1.MinimumSize = new Size(0, 70);
+            textBox1.MinimumSize = new Size(4, 50);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(70, 70);
+            textBox1.Size = new Size(100, 50);
             textBox1.TabIndex = 1;
             // 
             // current
             // 
             current.AutoSize = true;
             current.Font = new Font("Microsoft YaHei UI", 24F);
-            current.Location = new Point(109, 116);
-            current.MinimumSize = new Size(0, 70);
+            current.Location = new Point(11, 94);
+            current.Margin = new Padding(2, 0, 2, 0);
+            current.MinimumSize = new Size(0, 50);
             current.Name = "current";
-            current.Size = new Size(55, 70);
+            current.Size = new Size(37, 50);
             current.TabIndex = 2;
             current.Text = "0";
             // 
@@ -78,38 +82,44 @@
             // 
             operator1.DropDownStyle = ComboBoxStyle.DropDownList;
             operator1.FormattingEnabled = true;
-            operator1.Items.AddRange(new object[] { "加法", "减法", "乘法", "除法", "乘方", "开平方", "倒数" });
-            operator1.Location = new Point(260, 132);
+            operator1.Items.AddRange(new object[] { "加法", "减法", "乘法", "除法", "平方", "开平方", "倒数", "log10", "ln", "阶乘", "a的b次方", "a的y次根" });
+            operator1.DropDownWidth = 120;
+            operator1.Location = new Point(165, 102);
+            operator1.Margin = new Padding(2);
             operator1.Name = "operator1";
-            operator1.Size = new Size(112, 32);
+            operator1.Size = new Size(73, 25);
             operator1.TabIndex = 3;
+            operator1.SelectedIndexChanged += SelectOp;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(100, 92);
+            label1.Location = new Point(8, 72);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(64, 24);
+            label1.Size = new Size(44, 17);
             label1.TabIndex = 4;
             label1.Text = "当前值";
             // 
             // load1
             // 
             load1.Font = new Font("Microsoft YaHei UI", 12F);
-            load1.Location = new Point(621, 12);
+            load1.Location = new Point(395, 8);
+            load1.Margin = new Padding(2);
             load1.Name = "load1";
-            load1.Size = new Size(167, 84);
+            load1.Size = new Size(106, 60);
             load1.TabIndex = 5;
             load1.Text = "载入初始值";
             load1.UseVisualStyleBackColor = true;
-            load1.Click += Load;
+            load1.Click += Load1;
             // 
             // do1
             // 
             do1.Font = new Font("Microsoft YaHei UI", 12F);
-            do1.Location = new Point(621, 102);
+            do1.Location = new Point(395, 72);
+            do1.Margin = new Padding(2);
             do1.Name = "do1";
-            do1.Size = new Size(167, 84);
+            do1.Size = new Size(106, 60);
             do1.TabIndex = 6;
             do1.Text = "执行";
             do1.UseVisualStyleBackColor = true;
@@ -118,9 +128,10 @@
             // reset1
             // 
             reset1.Font = new Font("Microsoft YaHei UI", 12F);
-            reset1.Location = new Point(621, 192);
+            reset1.Location = new Point(395, 136);
+            reset1.Margin = new Padding(2);
             reset1.Name = "reset1";
-            reset1.Size = new Size(167, 84);
+            reset1.Size = new Size(106, 60);
             reset1.TabIndex = 7;
             reset1.Text = "重置";
             reset1.UseVisualStyleBackColor = true;
@@ -129,9 +140,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(475, 92);
+            label2.Location = new Point(242, 72);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(64, 24);
+            label2.Size = new Size(44, 17);
             label2.TabIndex = 8;
             label2.Text = "初始值";
             // 
@@ -139,25 +151,38 @@
             // 
             listBox1.Font = new Font("Microsoft YaHei UI", 12F);
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(12, 304);
+            listBox1.Location = new Point(8, 215);
+            listBox1.Margin = new Padding(2);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(776, 159);
+            listBox1.Size = new Size(495, 109);
             listBox1.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 277);
+            label3.Location = new Point(8, 196);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(46, 24);
+            label3.Size = new Size(32, 17);
             label3.TabIndex = 10;
             label3.Text = "消息";
             // 
+            // history1
+            //
+            history1.Location = new Point(8, 31);
+            history1.Name = "history1";
+            history1.Size = new Size(73, 37);
+            history1.TabIndex = 11;
+            history1.Text = "运算历史";
+            history1.UseVisualStyleBackColor = true;
+            history1.Click += ShowHistory;
+            //
             // Workbench
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 482);
+            ClientSize = new Size(509, 341);
+            Controls.Add(history1);
             Controls.Add(label3);
             Controls.Add(listBox1);
             Controls.Add(label2);
@@ -169,6 +194,7 @@
             Controls.Add(current);
             Controls.Add(textBox1);
             Controls.Add(status1);
+            Margin = new Padding(2);
             Name = "Workbench";
             Text = "Workbench";
             ResumeLayout(false);
@@ -188,5 +214,6 @@
         private Label label2;
         private ListBox listBox1;
         private Label label3;
+        private Button history1;
     }
 }
