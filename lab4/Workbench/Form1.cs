@@ -307,8 +307,7 @@ namespace Workbench
                 ? "暂无运算历史。"
                 : string.Join(Environment.NewLine, history);
 
-            MessageBox.Show(this, message, "运算历史",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(this, message, "运算历史");
         }
     }
 }
